@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<div class="background"></div>
+<div class="profile-card">
+  <div class="cover"></div>
+  <div class="profile">
+    <div class="pic"></div>
+    <div class="above-fold">
+      <div class="name">
+        Krishna Kireeti
+      </div>
+      <div class="role">
+        Software Engineer
+      </div>
+      <div class="location">
+        <i class="fas fa-map-marker-alt"></i>India
+      </div>
+      <div class="row">
+        <div class="button">
+          FOLLOW
+        </div>
+        <div class="button">
+          MESSAGE
+        </div>
+      </div>
+      <div id="expand-button">
+        <i class="fas fa-arrow-down"></i>
+      </div>
+    </div>
+    <div class="below-fold">
+      <div class="about">
+        <h3>
+          About
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto quos, eveniet corporis inventore mollitia tempore alias rerum ad. Ea, voluptas. Porro earum officiis nam harum asperiores sapiente quod accusamus!
+        </p>
+      </div>
+      <div class="row stats">
+        <div class="stat">
+          <label>Posts</label>
+          <div class="num">
+            956
+          </div>
+        </div>
+        <div class="stat">
+          <label>Followers</label>
+          <div class="num">
+            312
+          </div>
+        </div>
+        <div class="stat">
+          <label>Following</label>
+          <div class="num">
+            104
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+<script>
+// Immediately-invoked function expression to prevent scope pollution...
+(function(apiKey){ // <-- passed in at the bottom
+    /**
+     * Bootstrap the `pendo` namespace for deferred execution of common methods
+     * until the Agent is fully loaded from the CDN. The deferred methods are:
+     * - initialize
+     * - identify
+     * - updateOptions
+     * - pageLoad
+     */
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+    v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+        o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+        // Create a `<script>` tag linked to your application-specific Agent build from our CDN...
+        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);
+    })(window,document,'script','pendo');
+
+    // Call this whenever information about your visitors becomes available
+    // Please use Strings, Numbers, or Bools for value types.
+    pendo.initialize({
+        visitor: {
+            id:              'VISITOR-UNIQUE-ID'   // Required if user is logged in
+            // email:        // Optional
+            // role:         // Optional
+
+            // You can add any additional visitor level key-values here,
+            // as long as it's not one of the above reserved names.
+        },
+
+        account: {
+            id:           'ACCOUNT-UNIQUE-ID' // Highly recommended
+            // name:         // Optional
+            // planLevel:    // Optional
+            // planPrice:    // Optional
+            // creationDate: // Optional
+
+            // You can add any additional account level key-values here,
+            // as long as it's not one of the above reserved names.
+        }
+    });
+})('YOUR_PENDO_API_KEY'); // <--- You should change this.
+</script>
+</body>
+</html>
